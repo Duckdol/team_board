@@ -1,15 +1,13 @@
 [build]
   command = "npm run build"
-  publish = "out"
+  publish = ".next"
   
 [build.environment]
   NODE_VERSION = "18"
 
-# Next.js 정적 사이트를 위한 설정
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
+# Next.js 서버사이드 렌더링을 위한 설정
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
 
 [dev]
   command = "npm run dev"
